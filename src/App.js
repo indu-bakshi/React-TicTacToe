@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
+// import ReactDOM from 'react-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
+import BoardBox from './componentsGame/BoardBox'
+import ScoreBoard from './componentsGame/ScoreBoard'
+
 import './App.css';
+import './style/board.css'
+import './style/box.css'
+import './style/buttons.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+     <BrowserRouter>
+     <Route exact path='/' component={ScoreBoard}/>
+     <Route path='/BoardBox' component={BoardBox}/>
+     
+     </BrowserRouter>
+   
     </div>
-  );
+  )
 }
 
 export default App;
